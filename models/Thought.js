@@ -13,17 +13,13 @@ const thoughtSchema = new Schema(
       default: Date.now(),
       //user getter method to format timestamp on query
     },
-    users: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    ],
+    username:{
+      type: String,
+      required: true,
+    },
     reactions: [
         //replies
         //Array of nested documents created with the reactionSchema
-        //Create a virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
-        //make subdoc for reactions
     ],
   },
   {
@@ -34,6 +30,12 @@ const thoughtSchema = new Schema(
   }
 );
 
-const Course = model('course', courseSchema);
+//virtual called reactionCount that retrieves the length of the thought's reactions array field on query.
+thoughtSchema.virtual('reactionCount').get(function () {
+  return this.reactions.length;
+});
 
-module.exports = Course;
+
+const Thought = model('thought', thoughtSchema);
+
+module.exports = Thought;

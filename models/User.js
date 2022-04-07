@@ -1,30 +1,33 @@
 const { Schema, model } = require('mongoose');
-const thoughtSchema = require('./Thought');
 
 // Schema to create Student model
-const studentSchema = new Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
       unique: true,
       required: true,
-      trimmed: true,
+      trim: true,
     },
     email: {
       type: String,
       required: true,
       unique: true,
-     // (match valid email: mongoose match validation)
+      match:[/.+@.+\..+/], 
+     // (match valid email)
     },
-    thoughts: [thoughtSchema],
+    thoughts: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Thought',
+      },
+    ],
     friends: [
         {
           type: Schema.Types.ObjectId,
           ref: 'User',
         },
       ],
-    //array of id vals ref user model (self-reference)
-    //create virtual called friendCount
   },
   {
     toJSON: {
@@ -32,6 +35,11 @@ const studentSchema = new Schema(
     },
   }
 );
+
+// Virtual called friendCount that retrieves the length of the user's friends array field on query.
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
+});
 
 const User = model('user', userSchema);
 
