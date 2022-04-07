@@ -17,16 +17,12 @@ const thoughtSchema = new Schema(
       type: String,
       required: true,
     },
-    reactions: [
-        //replies
-        //Array of nested documents created with the reactionSchema
-    ],
+    reactions: [reactionSchema],
   },
   {
     toJSON: {
-      virtuals: true,
+      getters: true,
     },
-    id: false,
   }
 );
 

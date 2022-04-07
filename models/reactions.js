@@ -18,6 +18,13 @@ const reactionSchema = new mongoose.Schema({
         type: Date,
         default: Date.now(),
     },
-  });
+  },
+  {
+    toJSON: {
+      getters: true,
+    },
+    id: false,
+  }
+  );
  
   module.exports = reactionSchema
