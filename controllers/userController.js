@@ -13,7 +13,7 @@ module.exports = {
     User.findOne({ _id: req.params.userid })
       .select('-__v')
       .lean()
-      .then(async (User) =>
+      .then(async(user) =>
         !user
           ? res.status(404).json({ message: 'No User with that ID' })
           : res.json(user)
