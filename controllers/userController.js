@@ -33,7 +33,7 @@ module.exports = {
   
   // Delete a User and their associated thoughts
   deleteUser(req, res) {
-    User.findOneAndRemove({ _id: req.params.userid })
+    User.findOneAndDelete({ _id: req.params.userid })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'No such User exists' })
