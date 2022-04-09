@@ -1,8 +1,8 @@
 # NoSql-Social-Network
-[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
-  This application is 
+  This application entails an API for a social network web appliation, where each user can create an account with a username and email, post thoughts, react to others, and add friends! Take a peak to see express.js, a mongoDB database, and Mongoose ODM in action!
 
   ## Table of Contents
 
@@ -16,27 +16,27 @@
 ## Installation
 To install this application go through the following steps. 
 1. Open or clone the repository to VSC. 
-2. Install or verify you have the following packages installed to the terminal: inquirer, mysql2, sequelize, express, and express-session.
-3. In the terminal run node seeds/seed.js to seed the database (Optional)
-4. In the terminal run node server.js
-5. Open your local browser and type in search bar localhost:3001/
+2. Run npm install so all dependencies are installed for application. 
+3. In the terminal run node npm run dev or node index.js
+5. Open insomnia and try out the routes. Must all start with localhost:3001/api
 
 ## Usage
-This platform allows users to 
+In insomnica you can use GET, POST, DELETE, and UPDATE routes to transform the data. Refer to the following links to watch a demo of this application and/or the following pictures to see a visual example. 
 
-Demo link:
+Demo video1:
+Demo video2:
 
 ![alt text](/Images/home.png) 
 
 
 ## License
-This application uses ISC license 
+This application uses the MIT license 
 
 ## Contributing
 If you are looking to add a contribution to this project you can visit this site for information: [Contributor Covenant](https://www.contributor-covenant.org/)
 
 ## Tests
-There are currently no tests to run on this application
+There are currently no tests to run on this application, but you can test the routes in insomnia. 
 
 ## Questions
 
