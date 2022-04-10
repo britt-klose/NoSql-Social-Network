@@ -23,8 +23,9 @@ To install this application go through the following steps.
 ## Usage
 In insomnica you can use GET, POST, DELETE, and UPDATE routes to transform the data. Refer to the following links to watch a demo of this application and/or the following pictures to see a visual example. 
 
-Demo video1:
-Demo video2:
+Demo video1: https://drive.google.com/file/d/1909L42ZT_VOZjcwt8BlB1MLTNz0DBS_W/view
+
+Demo video2: https://drive.google.com/file/d/1XO7wIdGSvZlbRr0yoZ1rzQr0k2rh5PtN/view
 
 ![alt text](Images/addFriend.png) 
 ![alt text](Images/allUsers.png) 
