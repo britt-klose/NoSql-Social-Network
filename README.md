@@ -27,9 +27,16 @@ Demo video1: https://drive.google.com/file/d/1909L42ZT_VOZjcwt8BlB1MLTNz0DBS_W/v
 
 Demo video2: https://drive.google.com/file/d/1XO7wIdGSvZlbRr0yoZ1rzQr0k2rh5PtN/view
 
+POST Route to add a friend to a user
 ![alt text](Images/addFriend.png) 
+
+GET Route to find all users
 ![alt text](Images/allUsers.png) 
+
+DELETE Route to remove a reaction from a thought by ID
 ![alt text](Images/delReaction.png) 
+
+PUT route to update a thought by ID
 ![alt text](Images/putthought.png) 
 
 
