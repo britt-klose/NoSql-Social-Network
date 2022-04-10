@@ -26,7 +26,10 @@ In insomnica you can use GET, POST, DELETE, and UPDATE routes to transform the d
 Demo video1:
 Demo video2:
 
-![alt text](/Images/home.png) 
+![alt text](Images/addFriend.png) 
+![alt text](Images/allUsers.png) 
+![alt text](Images/delReaction.png) 
+![alt text](Images/putthought.png) 
 
 
 ## License
