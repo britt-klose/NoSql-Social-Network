@@ -91,9 +91,9 @@ module.exports = {
               .json({ message: 'No User found with that ID :(' })
           : res.json(user),
        User.findOneAndUpdate(
-          { _id: req.params.userId },
+          { _id: req.params.userid },
           { $pull: { friends: {userid: req.params.userid }} },
-          { new: true, runValidators: true }
+          { runValidators: true, new: true }
         )
         .then((user2)=>
         !user2
@@ -101,9 +101,10 @@ module.exports = {
               .status(404)
               .json({ message: 'No User found with this friend ID :(' })
           : res.json(user2)
-        .then(() => res.json({ message: 'User and thoughts deleted!' }))
+          .then(() => res.json({ message: 'Friend deleted!' }))
       )
       .catch((err) => res.status(500).json(err))
-      .catch((err)=>res.status(500).json(err)),
-    )}
+    )
+    .catch((err)=> res.status(500).json(err))
+  }
 };
