@@ -78,33 +78,23 @@ module.exports = {
   },
 
   // Remove a friend from a User's friend list
+  
   removeFriend(req, res) {
+    console.log(req.params.friendsid)
+    console.log(req.params.userid)
     User.findOneAndUpdate(
       { _id: req.params.userid },
-      { $pull: { friends: { friendid: req.params.friendid } } },
+      { $pull: { friends: req.params.friendsid } },
       { runValidators: true, new: true }
     )
       .then((user) =>
         !user
           ? res
               .status(404)
-              .json({ message: 'No User found with that ID :(' })
-          : res.json(user),
-       User.findOneAndUpdate(
-          { _id: req.params.userid },
-          { $pull: { friends: {userid: req.params.userid }} },
-          { runValidators: true, new: true }
-        )
-        .then((user2)=>
-        !user2
-          ? res
-              .status(404)
-              .json({ message: 'No User found with this friend ID :(' })
-          : res.json(user2)
-          .then(() => res.json({ message: 'Friend deleted!' }))
+              .json({ message: 'No friend found with that ID :(' })
+          : res.json(user)
       )
-      .catch((err) => res.status(500).json(err))
-    )
-    .catch((err)=> res.status(500).json(err))
-  }
-};
+      .catch((err) => res.status(500).json(err));
+  },
+  };
+
